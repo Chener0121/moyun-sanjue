@@ -1,0 +1,68 @@
+// 文件路径: src/assets/styles/main.scss
+
+@font-face {
+  // 核心修正点：给字体起一个独一无二的、自定义的名称
+  font-family: 'MyUniqueMoYunFont'; 
+  src: url('/fonts/FZBaiZRZTJW.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FangzhengYueSong';
+  src: url('/fonts/FangzhengQingKeBenYueSong.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-xuan-white: #FFFFFF;
+  --color-mo-black: #1A1A1A;
+  --color-light-gray: #F5F5F5;
+  --color-seal-red: #A83232;
+
+  // 核心修正点：在变量中也使用这个独一无二的名称
+  --font-title: 'MyUniqueMoYunFont', 'Kaiti SC', 'STKaiti', 'KaiTi', serif;
+  --font-body: 'FangzhengYueSong', 'Songti SC', 'SimSun', 'SongTi', serif;
+}
+
+/* 其他样式保持不变 */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-xuan-white);
+  color: var(--color-mo-black);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+a, button {
+  color: var(--color-mo-black);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+a:hover, button:hover {
+  color: var(--color-seal-red);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: normal;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
